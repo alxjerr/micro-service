@@ -1,0 +1,22 @@
+server:
+  port: 8081
+spring:
+  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver              # mysql驱动包
+    url: jdbc:mysql://10.30.50.70:3306/BO?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: inspur1234,
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 10
+  application:
+    name: user-service # 应用名称
+mybatis:
+  type-aliases-package: com.leyou.userservice.pojo
+eureka:
+  client:
+    service-url: # EurekaServer地址
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    prefer-ip-address: true # 当调用getHostname获取实例的hostname时，返回ip而不是host名称
+    ip-address: 127.0.0.1 # 指定自己的ip信息，不指定的话会自己寻找
