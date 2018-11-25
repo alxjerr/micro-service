@@ -12,7 +12,8 @@ public class UserDao {
     private RestTemplate restTemplate;
 
     public User queryUserById(Long id) {
-        String url = "http://localhost:8081/user/" + id;
+//        String url = "http://localhost:8081/user/" + id;
+        String url = "http://user-service/user/" + id;
         return this.restTemplate.getForObject(url, User.class);
     }
 

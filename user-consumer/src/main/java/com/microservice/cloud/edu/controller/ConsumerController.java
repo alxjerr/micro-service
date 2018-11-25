@@ -19,7 +19,7 @@ public class ConsumerController {
 
     @GetMapping
     public List<User> consume(@RequestParam("ids") List<Long> ids) {
-        return this.userService.querUserByIds(ids);
+        return this.userService.querUserById(ids);
     }
 
 }
